@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Frontend from './component/empform'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Frontend from './component/empform';
+import SuccessPage from './component/success';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <Frontend/>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Frontend />} />
+        <Route path="/success" element={<SuccessPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
